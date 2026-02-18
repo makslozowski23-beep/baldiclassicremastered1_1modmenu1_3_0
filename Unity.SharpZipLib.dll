@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tubble</name>
+    </assembly>
+    <members>
+        <member name="T:System.Runtime.CompilerServices.RequiredMemberAttribute">
+            
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute">
+            
+        </member>
+        <member name="M:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.#ctor(System.String)">
+            
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute">
+            
+        </member>
+        <member name="T:Tubble.Attributes.EditorControlAttribute">
+            <summary>
+            Used to specify which return types an <see cref="T:Tubble.Interfaces.IEditor"/> control will automatically be applied to.
+            </summary>
+            <example>
+            [!code-csharp[](../src/examples/TextInputControl.cs#EditorControlAttribute)]
+            </example>
+        </member>
+        <member name="P:Tubble.Attributes.EditorControlAttribute.EditableType">
+            <summary>
+            Return type of the member, that the editor control should be attached to.
+            </summary>
+        </member>
+        <member name="P:Tubble.Attributes.EditorControlAttribute.RequiredAttributes">
+            <summary>
+            The minimum required attributes, that must be specfified for this editor control to be chosen.
+            <br></br>
+            A higher amount of required attributes means a higher specificity. The higher the specificity, the earlier the control will be checked, if it fits to the attached member.
+            </summary>
+        </member>
+        <member name="M:Tubble.Attributes.EditorControlAttribute.#ctor(System.Type,System.Type[])">
+            <summary>
+            Specifies a specific return type, that the editor control will be used for.
+            </summary>
+            <param name="editableType">Return type of the member, that the editor control should be attached to.</param>
+            <param name="requiredAttributes">The minimum required attributes, that must be specfified for this editor control to be chosen.</param>
+        </member>
+        <member name="T:Tubble.Attributes.EditorControlAttribute`1">
+            <summary>
+            Used to specify which return types an <see cref="T:Tubble.Interfaces.IEditor"/> control will automatically be applied to.
+            <br></br>
+            This is a generic version of <see cref="T:Tubble.Attributes.EditorControlAttribute"/>.
+            </summary>
+            <example>
+            [!code-csharp[](../src/examples/TextInputControl.cs#EditorControlAttribute)]
+            </example>
+            <typeparam name="TReturnType">Return type of the member, that the editor control should be attached to.</typeparam>
+        </member>
+        <member name="M:Tubble.Attributes.EditorControlAttribute`1.#ctor(System.Type[])">
+            <summary>
+            Specifies a specific return type, that the editor control will be used for.
+            </summary>
+            <param name="requiredAttributes">The minimum required attributes, that must be specfified for this editor control to be chosen.</param>
+        </member>
+        <member name="T:Tubble.Attributes.EditorControlMetadataAttribute">
+            <summary>
+            Used to append custom metadata to be used by custom controls.
+            </summary>
+        </member>
+        <member name="P:Tubble.Attributes.EditorControlMetadataAttribute.Key">
+            <summary>
+            Key of the metadata information.
+            </summary>
+        </member>
+        <member name="P:Tubble.Attributes.EditorControlMetadataAttribute.Value">
+            <summary>
+            Value of the metadata information.
+            </summary>
+        </member>
+        <member name="M:Tubble.Attributes.EditorControlMetadataAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Specifies a key-value pair of information.
+            </summary>
+        </member>
+        <member name="T:Tubble.Attributes.OrderAttribute">
+            <summary>
+            Specifies the ordering of UI elements.
+            </summary>
+        </member>
+        <member name="P:Tubble.Attributes.OrderAttribute.Order">
+            <summary>
+            The order number.
+            <br></br>
+            A lower value places the element earlier, a higher number places the element later.
+            </summary>
+        </member>
+        <member name="P:Tubble.Attributes.OrderAttribute.Mode">
+            <summary>
+            The mode in which the element should be ordered.
+            <br></br>
+            Not all elements are ordered, this property allows you to specify whether or not the element should be placed before or after the unordered elements.
+            </summary>
+        </member>
+        <member name="M:Tubble.Attributes.OrderAttribute.#ctor(System.Int32,Tubble.Attributes.OrderAttribute.OrderMode)">
+            <summary>
+            Creates a new instance of the <see cref="T:Tubble.Attributes.OrderAttribute"/> class.
+            </summary>
+            <param name="order">The order number.</param>
+            <param name="mode">The mode in which the element should be ordered.</param>
+        </member>
+        <member name="T:Tubble.Attributes.OrderAttribute.OrderMode">
+            <summary>
+            Used to specify where the element should be ordered.
+            </summary>
+        </member>
+        <member name="F:Tubble.Attributes.OrderAttribute.OrderMode.BeforeUnordered">
+            <summary>
+            The element gets placed before elements without the <see cref="T:Tubble.Attributes.OrderAttribute"/> and ordered in that context.
+            </summary>
+        </member>
+        <member name="F:Tubble.Attributes.OrderAttribute.OrderMode.AfterUnordered">
+            <summary>
+            The element gets placed after elements without the <see cref="T:Tubble.Attributes.OrderAttribute"/> and ordered in that context.
+            </summary>
+        </member>
+        <member name="T:Tubble.Attributes.OverrideEditorControlAttribute">
+            <summary>
+            Used to force a member to use a specific editor control, if the automatic detection doesn't use the one that's needed.
+            </summary>
+        </member>
+        <member name="P:Tubble.Attributes.OverrideEditorControlAttribute.EditorType">
+            <summary>
+            Type of the <see cref="T:Tubble.Interfaces.IEditor"/> control.
+            </summary>
+        </member>
+        <member name="M:Tubble.Attributes.OverrideEditorControlAttribute.#ctor(System.Type)">
+            <summary>
+            Specifies a specific editor control to be used for the member.
+            </summary>
+            <param name="editorType">Type of the <see cref="T:Tubble.Interfaces.IEditor"/> control.</param>
+        </member>
+        <member name="T:Tubble.Attributes.OverrideEditorControlAttribute`1">
+            <summary>
+            Used to force a member to use a specific editor control, if the automatic detection doesn't use the one that's needed.
+            <br></br>
+            This is a generic version of <see cref="T:Tubble.Attributes.OverrideEditorControlAttribute"/>.
+            </summary>
+            <typeparam name="TEditorControl">Type of the <see cref="T:Tubble.Interfaces.IEditor"/> control.</typeparam>
+        </member>
+        <member name="M:Tubble.Attributes.OverrideEditorControlAttribute`1.#ctor">
+            <summary>
+            Specifies a specific editor control to be used for the member.
+            </summary>
+        </member>
+        <member name="T:Tubble.ControlCollection">
+            <summary>
+            Used to access individual UI controls, that are automatically generated.
+            </summary>
+        </member>
+        <member name="P:Tubble.ControlCollection.Controls">
+            <summary>
+            Returns all controls of the object with the name of the assigned property as the key.
+            </summary>
+        </member>
+        <member name="M:Tubble.ControlCollection.#ctor(System.Object)">
+            <summary>
+            Creates a <see cref="T:Tubble.ControlCollection"/> instance, which contains the automatically generated controls of the object.
+            </summary>
+            <param name="object">Object, that the controls belong to</param>
+        </member>
+        <member name="M:Tubble.ControlCollection.GetControlByMemberName(System.String)">
+            <summary>
+            Retrieves a UI control, based on the name of the member it's attached to.
+            </summary>
+            <param name="memberName">Name of the member, the UI control is attached to</param>
+            <returns>Control of the member</returns>
+        </member>
+        <member name="M:Tubble.ControlCollection.GetControlByMemberName``1(System.String)">
+            <summary>
+            Retrieves a UI control, based on the name of the member it's attached to.
+            </summary>
+            <typeparam name="TControl">Specific type of the control</typeparam>
+            <param name="memberName">Name of the member, the UI control is attached to</param>
+            <returns>Control of the member</returns>
+        </member>
+        <member name="M:Tubble.ControlCollection.Refresh">
+            <summary>
+            Updates all shown values of the editor controls.
+            </summary>
+        </member>
+        <member name="T:Tubble.EditorInformation">
+            <summary>
+            Used to retrieve automatic editor-control information.
+            <br></br>
+            See <see cref="T:Tubble.Interfaces.IControl"/> for more information about editor-controls.
+            </summary>
+        </member>
+        <member name="P:Tubble.EditorInformation.EditorType">
+            <summary>
+            UI control type
+            </summary>
+        </member>
+        <member name="P:Tubble.EditorInformation.EditableType">
+            <summary>
+            Type that the UI control type can edit
+            </summary>
+        </member>
+        <member name="P:Tubble.EditorInformation.RequiredAttributes">
+            <summary>
+            Minimum necessary attributes, for the UI control type to apply
+            </summary>
+        </member>
+        <member name="M:Tubble.EditorInformation.GetEditorControl(System.Type,System.Reflection.Assembly,System.Reflection.MemberInfo)">
+            <summary>
+            Retrieves the editor information, that applies to the member.
+            </summary>
+            <param name="editableType">Type of the value to be edited</param>
+            <param name="assembly">Assembly, where the editor control is defined</param>
+            <param name="member">Member, that the control applies to</param>
+            <returns>Editor information</returns>
+        </member>
+        <member name="T:Tubble.Interfaces.ICanvas">
+            <summary>
+            The canvas widget, that holds all Tubble controls.
+            </summary>
+        </member>
+        <member name="T:Tubble.Interfaces.IControl">
+            <summary>
+            Specifies members that are required by all controls.
+            </summary>
+        </member>
+        <member name="P:Tubble.Interfaces.IControl.ElementTransform">
+            <summary>
+            The main container transform that holds the control.
+            </summary>
+        </member>
+        <member name="P:Tubble.Interfaces.IControl.Parent">
+            <summary>
+            The <see cref="T:Tubble.Interfaces.IWidget"/> that this control is parented to.
+            </summary>
+        </member>
+        <member name="P:Tubble.Interfaces.IControl.Interactable">
+            <summary>
+            Specifies if the control should accept user input.
+            </summary>
+        </member>
+        <member name="M:Tubble.Interfaces.IControl.Destroy">
+            <summary>
+            Destroys the control.
+            </summary>
+        </member>
+        <member name="T:Tubble.Interfaces.IEditor">
+            <summary>
+            Specifies a control, that can be used to edit values.
+            </summary>
+        </member>
+        <member name="M:Tubble.Interfaces.IEditor.Initialize(Tubble.Interfaces.IMetadata)">
+            <summary>
+            Used to create the editor control automatically be the ModMenu.
+            <br></br>
+            The metadata provides information about what this control will be used for.
+            </summary>
+            <example>
+            [!code-csharp[](../src/examples/TextInputControl.cs#Initialize)]
+            </example>
+            <param name="metadata">Metadata of the member that this control is attached to.</param>
+        </member>
+        <member name="M:Tubble.Interfaces.IEditor.SetValueWithoutNotify(System.Object)">
+            <summary>
+            Used to set the value of the editor control, without changing the data of the member it is attached to.
+            </summary>
+            <example>
+            [!code-csharp[](../src/examples/TextInputControl.cs#SetValueWithoutNotify)]
+            </example>
+            <param name="input">Value that should be set on the editor control.</param>
+        </member>
+        <member name="T:Tubble.Interfaces.ILabeledControl">
+            <summary>
+            Specifies that the control has a title text.
+            </summary>
+        </member>
+        <member name="P:Tubble.Interfaces.ILabeledControl.Title">
+            <summary>
+            Title text (description) of the control.
+            </summary>
+        </member>
+        <member name="T:Tubble.Interfaces.IMetadata">
+            <summary>
+            Used to provide information for creating editor controls automatically.
+            <br></br>
+            See <see cref="M:Tubble.Interfaces.IEditor.Initialize(Tubble.Interfaces.IMetadata)"/> for more information.
+            </summary>
+        </member>
+        <member name="P:Tubble.Interfaces.IMetadata.Instance">
+            <summary>
+            The object instance, where the editor control is performing operations.
+            </summary>
+        </member>
+        <member name="P:Tubble.Interfaces.IMetadata.Member">
+            <summary>
+            The member, that the editor control is attached to.
+            </summary>
+        </member>
+        <member name="T:Tubble.Interfaces.IWidget">
+            <summary>
+            Defines a control, that can hold child controls.
+            </summary>
+        </member>
+        <member name="P:Tubble.Interfaces.IWidget.ChildContainerTransform">
+            <summary>
+            The transform container that the child controls are parented to.
+            </summary>
+        </member>
+        <member name="P:Tubble.Interfaces.IWidget.Children">
+            <summary>
+            List of children, that are attached to this control.
+            </summary>
+        </member>
+        <member name="M:Tubble.Interfaces.IWidget.AddChild(Tubble.Interfaces.IControl)">
+            <summary>
+            Attaches a control as a child to this control.
+            </summary>
+            <param name="element">New child of this control.</param>
+        </member>
+        <member name="M:Tubble.Interfaces.IWidget.RemoveChild(Tubble.Interfaces.IControl)">
+            <summary>
+            Detaches a control from this control, if it is a child of this control.
+            </summary>
+            <param name="element">The child control that should be removed.</param>
+        </member>
+        <member name="T:Tubble.Metadata.MethodMetadata">
+            <summary>
+            Provides information for initializing editor controls.
+            <br></br>
+            See <see cref="M:Tubble.Interfaces.IEditor.Initialize(Tubble.Interfaces.IMetadata)"/> for more information.
+            </summary>
+        </member>
+        <member name="P:Tubble.Metadata.MethodMetadata.Instance">
+            <summary>
+            The object instance, where the editor control runs the method.
+            </summary>
+        </member>
+        <member name="P:Tubble.Metadata.MethodMetadata.Member">
+            <summary>
+            The method's MemberInfo.
+            </summary>
+        </member>
+        <member name="P:Tubble.Metadata.MethodMetadata.Method">
+            <summary>
+            The method that gets run by the editor control.
+            </summary>
+        </member>
+        <member name="M:Tubble.Metadata.MethodMetadata.#ctor(System.Object,System.Reflection.MemberInfo,System.Action)">
+            <summary>
+            Creates a new <see cref="T:Tubble.Metadata.MethodMetadata"/> instance, containing the specified data.
+            </summary>
+            <param name="instance">The object instance, where the editor control runs the method.</param>
+            <param name="member">The method's MemberInfo.</param>
+            <param name="method">The method that gets run by the editor control.</param>
+        </member>
+        <member name="T:Tubble.Metadata.PropertyMetadata">
+            <summary>
+            Provides information for initializing editor controls.
+            <br></br>
+            See <see cref="M:Tubble.Interfaces.IEditor.Initialize(Tubble.Interfaces.IMetadata)"/> for more information.
+            </summary>
+        </member>
+        <member name="P:Tubble.Metadata.PropertyMetadata.Instance">
+            <summary>
+            The object instance, where the editor control modifies the property.
+            </summary>
+        </member>
+        <member name="P:Tubble.Metadata.PropertyMetadata.Member">
+            <summary>
+            The property's MemberInfo.
+            </summary>
+        </member>
+        <member name="P:Tubble.Metadata.PropertyMetadata.Get">
+            <summary>
+            The getter of the property.
+            </summary>
+        </member>
+        <member name="P:Tubble.Metadata.PropertyMetadata.Set">
+            <summary>
+            The setter of the property.
+            </summary>
+        </member>
+        <member name="M:Tubble.Metadata.PropertyMetadata.#ctor(System.Object,System.Reflection.MemberInfo,System.Delegate,System.Delegate)">
+            <summary>
+            Creates a new <see cref="T:Tubble.Metadata.PropertyMetadata"/> instance, containing the specified data.
+            </summary>
+            <param name="instance">The object instance, where the editor control modifies the property.</param>
+            <param name="member">The property's MemberInfo.</param>
+            <param name="get">The getter of the property.</param>
+            <param name="set">The setter of the property.</param>
+        </member>
+        <member name="T:Tubble.Metadata.PropertyMetadata`1">
+            <summary>
+            Provides information for initializing editor controls.
+            <br></br>
+            This method is an explicitly typed version of <see cref="T:Tubble.Metadata.PropertyMetadata"/>
+            <br></br>
+            See <see cref="M:Tubble.Interfaces.IEditor.Initialize(Tubble.Interfaces.IMetadata)"/> for more information.
+            </summary>
+            <typeparam name="TReturnType">Return type of the property.</typeparam>
+        </member>
+        <member name="P:Tubble.Metadata.PropertyMetadata`1.Get">
+            <summary>
+            The getter of the property.
+            </summary>
+        </member>
+        <member name="P:Tubble.Metadata.PropertyMetadata`1.Set">
+            <summary>
+            The setter of the property.
+            </summary>
+        </member>
+        <member name="M:Tubble.Metadata.PropertyMetadata`1.#ctor(System.Object,System.Reflection.MemberInfo,System.Func{`0},System.Action{`0})">
+            <summary>
+            Creates a new <see cref="T:Tubble.Metadata.PropertyMetadata"/> instance, containing the specified data.
+            </summary>
+            <param name="instance">The object instance, where the editor control modifies the property.</param>
+            <param name="member">The property's MemberInfo.</param>
+            <param name="get">The getter of the property.</param>
+            <param name="set">The setter of the property.</param>
+        </member>
+        <member name="T:Tubble.OrderedItem">
+            <summary>
+            Used to specify the order of the current editor-control element.
+            <br></br>
+            See <see cref="T:Tubble.Interfaces.IControl"/> for more information about editor-controls.
+            </summary>
+        </member>
+        <member name="T:Tubble.OrderHelper">
+            <summary>
+            Used to keep ordered elements ordered automatically.
+            <br></br>
+            See <see cref="T:Tubble.OrderedItem"/> for more information about ordered elements.
+            </summary>
+        </member>
+        <member name="M:Tubble.OrderHelper.OnTransformChildAdded">
+            <summary>
+            Gets called automatically, when a child gets added to the current gameobject.
+            </summary>
+        </member>
+        <member name="M:Tubble.OrderHelper.UpdateOrder">
+            <summary>
+            Used to ensure the order of the elements.
+            </summary>
+        </member>
+    </members>
+</doc>

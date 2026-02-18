@@ -1,0 +1,824 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ModMenuAPI</name>
+    </assembly>
+    <members>
+        <member name="T:System.Runtime.CompilerServices.RequiredMemberAttribute">
+            
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute">
+            
+        </member>
+        <member name="M:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.#ctor(System.String)">
+            
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute">
+            
+        </member>
+        <member name="T:ModMenuAPI.Attributes.ConditionEventAttribute`1">
+            <summary>
+            Used to determine if a UI element should be interactable, based on a set condition that's checked through the specified event.
+            </summary>
+            <typeparam name="TEvent">Type of the event, that checks the condition.</typeparam>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.ConditionEventAttribute`1.#ctor(System.Boolean,System.Type,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.ConditionEventAttribute`1"/> class.
+            </summary>
+            <param name="initiallyActive">true, if the UI element should be interactable before the event was run once.</param>
+            <param name="conditionCheckerType">Type where the condition checker method is defined.</param>
+            <param name="conditionCheckerMethod">Name of the condition checker method.</param>
+        </member>
+        <member name="T:ModMenuAPI.Attributes.ConditionEventAttribute">
+            <summary>
+            Used to determine if a UI element should be interactable, based on a set condition that's checked through the specified event.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Attributes.ConditionEventAttribute.InitiallyActive">
+            <summary>
+            Checks whether or not the UI element should be interactable before the event was run once.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Attributes.ConditionEventAttribute.EventType">
+            <summary>
+            Type of the event, that checks the condition.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Attributes.ConditionEventAttribute.ConditionMethod">
+            <summary>
+            The method that checks the condition, when the event has been published.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.ConditionEventAttribute.#ctor(System.Boolean,System.Type,System.Type,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.ConditionEventAttribute"/> class.
+            </summary>
+            <param name="initiallyActive">true, if the UI element should be interactable before the event was run once.</param>
+            <param name="eventType">Type of the event, that checks the condition.</param>
+            <param name="conditionCheckerType">Type where the condition checker method is defined.</param>
+            <param name="conditionCheckerMethod">Name of the condition checker method.</param>
+        </member>
+        <member name="T:ModMenuAPI.Attributes.GroupAttribute`1">
+            <summary>
+            Used to specify the group widget, the generated UI element should be parented to.
+            </summary>
+            <typeparam name="TGroup">Type of the group widget.</typeparam>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.GroupAttribute`1.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.GroupAttribute`1"/> class.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Attributes.GroupAttribute">
+            <summary>
+            Used to specify the group widget, the generated UI element should be parented to.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Attributes.GroupAttribute.Group">
+            <summary>
+            Type of the group widget.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.GroupAttribute.#ctor(System.Type)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.GroupAttribute"/> class.
+            </summary>
+            <param name="groupType">Type of the group widget.</param>
+        </member>
+        <member name="T:ModMenuAPI.Attributes.HelpAttribute`1">
+            <summary>
+            Used to specify a help text on the control of the property.
+            </summary>
+            <typeparam name="TResourceType">Type of the RESX resources class.</typeparam>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.HelpAttribute`1.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.HelpAttribute`1"/> class.
+            </summary>
+            <param name="titleResourceName">The name of the RESX resource that should be used for the help window title.</param>
+            <param name="textResourceName">The name of the RESX resource that should be used for the help window information text.</param>
+        </member>
+        <member name="T:ModMenuAPI.Attributes.HelpAttribute">
+            <summary>
+            Used to specify a help text on the control of the property.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Attributes.HelpAttribute.Title">
+            <summary>
+            Title text of the help window.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Attributes.HelpAttribute.Text">
+            <summary>
+            Information text of the help window.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.HelpAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.HelpAttribute"/> class.
+            </summary>
+            <param name="title">The text that should be used for the help window title.</param>
+            <param name="text">The text that should be used for the help window information text.</param>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.HelpAttribute.#ctor(System.Type,System.String,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.HelpAttribute"/> class.
+            </summary>
+            <param name="resourceType">Type of the RESX resources class.</param>
+            <param name="titleResourceName">The name of the RESX resource that should be used for the help window title.</param>
+            <param name="textResourceName">The name of the RESX resource that should be used for the help window information text.</param>
+        </member>
+        <member name="T:ModMenuAPI.Attributes.LabelAttribute`1">
+            <summary>
+            Used to specify a title text on the control of the property.
+            </summary>
+            <typeparam name="TResourceType">Type of the RESX resources class.</typeparam>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.LabelAttribute`1.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.LabelAttribute`1"/> class.
+            </summary>
+            <param name="resourceName">The name of the RESX resource that should be used for the text.</param>
+        </member>
+        <member name="T:ModMenuAPI.Attributes.LabelAttribute">
+            <summary>
+            Used to specify a title text on the control of the property.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Attributes.LabelAttribute.Text">
+            <summary>
+            Title text of the UI element.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.LabelAttribute.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.LabelAttribute"/> class.
+            </summary>
+            <param name="text">Title text of the UI element.</param>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.LabelAttribute.#ctor(System.Type,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.LabelAttribute"/> class.
+            </summary>
+            <param name="resourceType">Type of the RESX resources class.</param>
+            <param name="resourceName">The name of the RESX resource that should be used for the text.</param>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.LabelAttribute.op_Implicit(System.String)~ModMenuAPI.Attributes.LabelAttribute">
+            <summary>
+            Implicitly converts a <see cref="T:System.String"/> to <see cref="T:ModMenuAPI.Attributes.LabelAttribute"/>.
+            <br></br>
+            Shorthand version of <see cref="M:ModMenuAPI.Attributes.LabelAttribute.#ctor(System.String)"/>
+            </summary>
+            <param name="value">Title text of the UI element.</param>
+        </member>
+        <member name="T:ModMenuAPI.Attributes.NoDefaultAttribute">
+            <summary>
+            Used to specify that the property doesn't have a specific default value and will be ignored when resetting values.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Attributes.ValueRangeAttribute">
+            <summary>
+            Used to restrict the possible values to the specified range.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Attributes.ValueRangeAttribute.Min">
+            <summary>
+            Minimum possible value.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Attributes.ValueRangeAttribute.Max">
+            <summary>
+            Maximum possible value.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.ValueRangeAttribute.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.ValueRangeAttribute"/> class.
+            </summary>
+            <param name="min">The minimum possible value.</param>
+            <param name="max">The maximum possible value.</param>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.ValueRangeAttribute.#ctor(System.Single,System.Single)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.ValueRangeAttribute"/> class.
+            </summary>
+            <param name="min">The minimum possible value.</param>
+            <param name="max">The maximum possible value.</param>
+        </member>
+        <member name="M:ModMenuAPI.Attributes.ValueRangeAttribute.#ctor(System.Double,System.Double)">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Attributes.ValueRangeAttribute"/> class.
+            </summary>
+            <param name="min">The minimum possible value.</param>
+            <param name="max">The maximum possible value.</param>
+        </member>
+        <member name="T:ModMenuAPI.Characters.AbstractCharacterModifiers`1">
+            <summary>
+            An abstract base class for default character modifiers.
+            </summary>
+            <typeparam name="TNPC">Type of the character.</typeparam>
+        </member>
+        <member name="P:ModMenuAPI.Characters.AbstractCharacterModifiers`1.Type">
+            <summary>
+            Type of the character.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.AbstractCharacterModifiers`1.Exists">
+            <summary>
+            Checks, if at least one instance of the character currently exists.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.AbstractCharacterModifiers`1.Collection">
+            <summary>
+            A read-only list of the currently existing instances of the character.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.AbstractCharacterModifiers`1.Enabled">
+            <summary>
+            Checks or sets, if any instance of this character is currently enabled.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Characters.AbstractCharacterModifiers`1.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:ModMenuAPI.Characters.AbstractCharacterModifiers`1"/> class.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Characters.AbstractCharacterModifiers`1.Spawn(System.Int32,`0)">
+            <summary>
+            Spawns a new instance of the specified NPC
+            </summary>
+            <exception cref="T:System.NullReferenceException">A spawnable instance of the specified character couldn't be found.</exception>
+        </member>
+        <member name="M:ModMenuAPI.Characters.AbstractCharacterModifiers`1.Despawn">
+            <summary>
+            Destroy all existing instances of the specified character.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Characters.CharacterCollector`1">
+            <summary>
+            Used to collect new character instances.
+            <br></br>
+            This collector is a loose and strict collector (See <see cref="T:ModMenuAPI.Collectors.LooseStrictMonoBehaviourCollectorItem`1"/>).
+            </summary>
+            <typeparam name="TItem">Type of the character to be collected.</typeparam>
+        </member>
+        <member name="T:ModMenuAPI.Characters.CharacterCollectorItem">
+            <summary>
+            Holds the collected character instance.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Characters.Interfaces.IBasicCharacter">
+            <summary>
+            Specifies the basic properties and methods all characters should have.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.Interfaces.IBasicCharacter.Type">
+            <summary>
+            The explicit type of the character.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.Interfaces.IBasicCharacter.Exists">
+            <summary>
+            Checks, if at least one instance of the character currently exists.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.Interfaces.IBasicCharacter.Collection">
+            <summary>
+            A read-only list of the currently existing instances of the character.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Characters.Interfaces.ICharacterCanBeToggled">
+            <summary>
+            Specifies that the character can be enabled and disabled.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.Interfaces.ICharacterCanBeToggled.Enabled">
+            <summary>
+            Checks or sets, whether or not the character is enabled.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Characters.Interfaces.ICharacterCanHear">
+            <summary>
+            Specifies that the character can react to audio cues.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.Interfaces.ICharacterCanHear.IsDeaf">
+            <summary>
+            Checks or sets, whether or not the character can hear the audio cues it should react to.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Characters.Interfaces.ICharacterCanMove">
+            <summary>
+            Specifies that the character can physically move around.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.Interfaces.ICharacterCanMove.Speed">
+            <summary>
+            The speed at which the character moves.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Characters.Interfaces.ICharacterCanPlayAudio">
+            <summary>
+            Specifies that the character has audio cues.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.Interfaces.ICharacterCanPlayAudio.IsSilent">
+            <summary>
+            Checks or sets, whether or not the character can play its audio cues.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Characters.Interfaces.ICharacterCanSee">
+            <summary>
+            Specifies if the character can see the player.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.Interfaces.ICharacterCanSee.IsBlind">
+            <summary>
+            Checks or sets, whether or not the character can see.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Characters.Interfaces.ICharacterHasPhysicalAppearance">
+            <summary>
+            Specifies, that the character can be physically seen in the world.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.Interfaces.ICharacterHasPhysicalAppearance.Scale">
+            <summary>
+            The scale (size) of the character.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.Interfaces.ICharacterHasPhysicalAppearance.IsInvisible">
+            <summary>
+            Checks or sets, whether or not the character should be invisible at all times.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Characters.Interfaces.ICharacterHasPlayerTrigger">
+            <summary>
+            Specifies that the character can directly interact with the player, upon touching the player.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Characters.Interfaces.ICharacterHasPlayerTrigger.IgnoresPlayerTrigger">
+            <summary>
+            Checks or sets, whether or not the character should act upon touching the player.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Characters.Interfaces.ICharacterModifiers">
+            <summary>
+            Specifies a type of modifiers for characters.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Characters.Interfaces.IModifiersForCharacter`1">
+            <summary>
+            Specifies new modifiers for the provided character.
+            </summary>
+            <typeparam name="TNPC">Type of the character.</typeparam>
+        </member>
+        <member name="T:ModMenuAPI.Collectors.DistinctSingletonCollector`2">
+            <summary>
+            Used to collect objects of the specified type in a single collector, that can be accessed from anywhere.
+            <br></br>
+            This collector type doesn't allow duplicate objects, based on the provided equality comparer.
+            </summary>
+            <typeparam name="TItem"></typeparam>
+            <typeparam name="TEqualityComparer"></typeparam>
+        </member>
+        <member name="P:ModMenuAPI.Collectors.DistinctSingletonCollector`2.Collection">
+            <summary>
+            A read-only list of currently collected items.
+            </summary>
+        </member>
+        <member name="E:ModMenuAPI.Collectors.DistinctSingletonCollector`2.ItemAdded">
+            <summary>
+            An event that runs, when a new item gets added to the collection.
+            </summary>
+        </member>
+        <member name="E:ModMenuAPI.Collectors.DistinctSingletonCollector`2.ItemRemoved">
+            <summary>
+            An event that runs, when an existing item was removed from the collection.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Collectors.DistinctSingletonCollector`2.Add(`0)">
+            <summary>
+            Adds a new item to the collection.
+            </summary>
+            <param name="item">Item to be collected.</param>
+        </member>
+        <member name="M:ModMenuAPI.Collectors.DistinctSingletonCollector`2.Remove(`0)">
+            <summary>
+            Removes an existing item from the collection.
+            </summary>
+            <param name="item">Item to be removed.</param>
+        </member>
+        <member name="M:ModMenuAPI.Collectors.DistinctSingletonCollector`2.Clear">
+            <summary>
+            Removes all elements from the collection.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Collectors.InstanceCollector`1">
+            <summary>
+            Used to collect objects of the specified type, for the duration of the collector's lifetime.
+            </summary>
+            <typeparam name="TItem">Type of the objects, that will be collected.</typeparam>
+        </member>
+        <member name="P:ModMenuAPI.Collectors.InstanceCollector`1.Collection">
+            <summary>
+            A read-only list of currently collected items.
+            </summary>
+        </member>
+        <member name="E:ModMenuAPI.Collectors.InstanceCollector`1.ItemAdded">
+            <summary>
+            An event that runs, when a new item gets added to the collection.
+            </summary>
+        </member>
+        <member name="E:ModMenuAPI.Collectors.InstanceCollector`1.ItemRemoved">
+            <summary>
+            An event that runs, when an existing item was removed from the collection.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Collectors.InstanceCollector`1.Add(`0)">
+            <summary>
+            Adds a new item to the collection.
+            </summary>
+            <param name="item">Item to be collected.</param>
+        </member>
+        <member name="M:ModMenuAPI.Collectors.InstanceCollector`1.Remove(`0)">
+            <summary>
+            Removes an existing item from the collection.
+            </summary>
+            <param name="item">Item to be removed.</param>
+        </member>
+        <member name="M:ModMenuAPI.Collectors.InstanceCollector`1.Clear">
+            <summary>
+            Removes all elements from the collection.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Collectors.MonoBehaviourCollector`2">
+            <summary>
+            Used to collect MonoBehaviour instances of the specified type.
+            <br></br>
+            Items that are added to this collection are automatically removed, when the MonoBehaviour instance is destroyed.
+            </summary>
+            <typeparam name="TItem">Type of the item that should be collected.</typeparam>
+            <typeparam name="TCollectorItem">Type of the item collection wrapper, that takes care of lifetime management (See <see cref="T:ModMenuAPI.Collectors.MonoBehaviourCollectorItem"/>).</typeparam>
+        </member>
+        <member name="P:ModMenuAPI.Collectors.MonoBehaviourCollector`2.Collection">
+            <summary>
+            A read-only list of currently collected items.
+            </summary>
+        </member>
+        <member name="E:ModMenuAPI.Collectors.MonoBehaviourCollector`2.ItemAdded">
+            <summary>
+            An event that runs, when a new item gets added to the collection.
+            </summary>
+        </member>
+        <member name="E:ModMenuAPI.Collectors.MonoBehaviourCollector`2.ItemRemoved">
+            <summary>
+            An event that runs, when an existing item was removed from the collection.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Collectors.MonoBehaviourCollector`2.Add(`0)">
+            <summary>
+            Adds a new item to the collection.
+            </summary>
+            <param name="item">Item to be collected.</param>
+        </member>
+        <member name="T:ModMenuAPI.Collectors.LooseMonoBehaviourCollectorItem`1">
+            <summary>
+            A collector item with the loose type definition of <typeparamref name="TItem"/>.
+            <br></br>
+            This means, if i have a collector of type <see cref="T:NPC"/> and add an item of type <see cref="T:Baldi"/>, it gets added to the <see cref="T:Baldi"/> collection.
+            </summary>
+            <typeparam name="TItem">Type of collected item.</typeparam>
+        </member>
+        <member name="P:ModMenuAPI.Collectors.LooseMonoBehaviourCollectorItem`1.Item">
+            <summary>
+            The instance of the collected item.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Collectors.StrictMonoBehaviourCollectorItem`1">
+            <summary>
+            A collector item with the strict type definition of <typeparamref name="TItem"/>.
+            <br></br>
+            This means, if i have a collector of type <see cref="T:NPC"/> and add an item of type <see cref="T:Baldi"/>, it gets added to the <see cref="T:NPC"/> collection.
+            </summary>
+            <typeparam name="TItem">Type of collected item.</typeparam>
+        </member>
+        <member name="T:ModMenuAPI.Collectors.LooseStrictMonoBehaviourCollectorItem`1">
+            <summary>
+            A collector item with the loose and strict type definition of <typeparamref name="TItem"/>.
+            <br></br>
+            This means, if i have a collector of type <see cref="T:NPC"/> and add an item of type <see cref="T:Baldi"/>, it gets added to the <see cref="T:Baldi"/> collection as well as the <see cref="T:NPC"/> collection.
+            </summary>
+            <typeparam name="TItem">Type of collected item</typeparam>
+        </member>
+        <member name="P:ModMenuAPI.Collectors.LooseStrictMonoBehaviourCollectorItem`1.Item">
+            <summary>
+            The instance of the collected item.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Collectors.MonoBehaviourCollectorItem">
+            <summary>
+            An abstract MonoBehaviour collector.
+            <br></br>
+            MonoBehaviours are removed from the collection, when the lifetime of the collected item ends (destroyed).
+            <br></br>
+            Collector items are used to keep track of the lifetime of the collected item.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Collectors.SingletonCollector`1">
+            <summary>
+            Used to collect objects of the specified type in a single collector, that can be accessed from anywhere.
+            </summary>
+            <typeparam name="TItem">Type of the objects, that will be collected.</typeparam>
+        </member>
+        <member name="P:ModMenuAPI.Collectors.SingletonCollector`1.Collection">
+            <summary>
+            A read-only list of currently collected items.
+            </summary>
+        </member>
+        <member name="E:ModMenuAPI.Collectors.SingletonCollector`1.ItemAdded">
+            <summary>
+            An event that runs, when a new item gets added to the collection.
+            </summary>
+        </member>
+        <member name="E:ModMenuAPI.Collectors.SingletonCollector`1.ItemRemoved">
+            <summary>
+            An event that runs, when an existing item was removed from the collection.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Collectors.SingletonCollector`1.Add(`0)">
+            <summary>
+            Adds a new item to the collection.
+            </summary>
+            <param name="item">Item to be collected.</param>
+        </member>
+        <member name="M:ModMenuAPI.Collectors.SingletonCollector`1.Remove(`0)">
+            <summary>
+            Removes an existing item from the collection.
+            </summary>
+            <param name="item">Item to be removed.</param>
+        </member>
+        <member name="M:ModMenuAPI.Collectors.SingletonCollector`1.Clear">
+            <summary>
+            Removes all elements from the collection.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Events.IModMenuInitializedEvent">
+            <summary>
+            A built in event, that gets published when the ModMenu has been fully initialized.
+            > [!TIP]
+            > This event only gets published once, so you should use <seealso cref="M:ModMenuAPI.Interfaces.Services.IEventService.SubscribeOnce``1(ModMenuAPI.Interfaces.Services.IEventService.EventHandler)"/> to prevent lingering event listeners.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Events.IModMenuOpenEvent">
+            <summary>
+            A built in event, that gets published when the ModMenu has been opened.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Events.IPlayerInstantiatedEvent">
+            <summary>
+            A built in event, that gets published when the player has been instantiated.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Events.ISceneChangedEvent">
+            <summary>
+            A built in event, that gets published when the Unity scene changed.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Interfaces.IEvent">
+            <summary>
+            Used to define new events for the <see cref="T:ModMenuAPI.Interfaces.Services.IEventService"/>.
+            <br></br>
+            See <seealso cref="T:ModMenuAPI.Interfaces.Services.IEventService"/> for more information on events.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Interfaces.IModifiers">
+            <summary>
+            Used to define modifiers for the ModMenu.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Interfaces.IPlugin">
+            <summary>
+            Used to define a new ModMenu plugin.
+            <br></br>
+            A class implementing this interface is required, to be recognized as a ModMenu plugin.
+            </summary>
+            <example>
+            [!code-csharp[](../src/examples/ExampleModMenuPlugin.cs)]
+            </example>
+        </member>
+        <member name="P:ModMenuAPI.Interfaces.IPlugin.Guid">
+            <summary>
+            A unique GUID for the ModMenu plugin.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Interfaces.IPlugin.Name">
+            <summary>
+            The name of the plugin.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Interfaces.IPlugin.Version">
+            <summary>
+            The version of the plugin.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Interfaces.IPlugin.Author">
+            <summary>
+            The name(s) of the author(s) of the plugin.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Interfaces.IPlugin.Description">
+            <summary>
+            A small description, describing what this plugin is for.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Interfaces.IService">
+            <summary>
+            Used to define new services.
+            <br></br>
+            See <seealso cref="T:ModMenuAPI.Service"/> for more information on services.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Interfaces.Services.IEventService">
+            <summary>
+            Used to send out and act upon on self-defined events.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Interfaces.Services.IEventService.EventHandler">
+            <summary>
+            Event handler of the events.
+            </summary>
+            <param name="args">Additional arguments for the handler.</param>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IEventService.Publish``1(System.Object)">
+            <summary>
+            Executes all event handlers that are subscribed to the provided event type.
+            > [!IMPORTANT]
+            > Do NOT publish an event that you do not own, unless you ABSOLUTELY know what you're doing!
+            </summary>
+            <typeparam name="TEvent">Type of the event that should be run.</typeparam>
+            <param name="args">Additional arguments for the handler.</param>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IEventService.Subscribe``1(ModMenuAPI.Interfaces.Services.IEventService.EventHandler)">
+            <summary>
+            Subscribes an event handler to the provided event.
+            </summary>
+            <typeparam name="TEvent">Type of the event that should be subscribed to.</typeparam>
+            <param name="eventHandler">The event handler action that should run, when the event gets published.</param>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IEventService.Subscribe(System.Type,ModMenuAPI.Interfaces.Services.IEventService.EventHandler)">
+            <summary>
+            Subscribes an event handler to the provided event.
+            </summary>
+            <param name="event">Type of the event that should be subscribed to.</param>
+            <param name="eventHandler">The event handler action that should run, when the event gets published.</param>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IEventService.SubscribeOnce``1(ModMenuAPI.Interfaces.Services.IEventService.EventHandler)">
+            <summary>
+            Subscribes an event handler to the provided event and immediately unsubscribes after the event ran.
+            </summary>
+            <typeparam name="TEvent">Type of the event that should be subscribed to.</typeparam>
+            <param name="eventHandler">The event handler action that should run, when the event gets published.</param>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IEventService.SubscribeOnce(System.Type,ModMenuAPI.Interfaces.Services.IEventService.EventHandler)">
+            <summary>
+            Subscribes an event handler to the provided event and immediately unsubscribes after the event ran.
+            </summary>
+            <param name="event">Type of the event that should be subscribed to.</param>
+            <param name="eventHandler">The event handler action that should run, when the event gets published.</param>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IEventService.Unsubscribe``1(ModMenuAPI.Interfaces.Services.IEventService.EventHandler)">
+            <summary>
+            Unsubscribes an event handler from the specified event.
+            </summary>
+            <typeparam name="TEvent">Type of the event that should be unsubscribed from.</typeparam>
+            <param name="eventHandler">The event handler action that is currently subscribed to the specified event.</param>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IEventService.Unsubscribe(System.Type,ModMenuAPI.Interfaces.Services.IEventService.EventHandler)">
+            <summary>
+            Unsubscribes an event handler from the specified event.
+            </summary>
+            <param name="event">Type of the event that should be unsubscribed from.</param>
+            <param name="eventHandler">The event handler action that is currently subscribed to the specified event.</param>
+        </member>
+        <member name="T:ModMenuAPI.Interfaces.Services.IModMenuService">
+            <summary>
+            Used to retrieve specific modifiers.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Interfaces.Services.IModMenuService.Modifiers">
+            <summary>
+            A read-only list of all registered modifiers instances.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IModMenuService.Get``1">
+            <summary>
+            Retrieves the registered modifiers instance of the specified type.
+            </summary>
+            <typeparam name="TModifiers">Type of the modifiers instance.</typeparam>
+            <returns>The modifiers instance.</returns>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IModMenuService.Get(System.Type)">
+            <summary>
+            Retrieves the registered modifiers instance of the specified type.
+            </summary>
+            <param name="modifiersType">Type of the modifiers instance.</param>
+            <returns>The modifiers instance.</returns>
+        </member>
+        <member name="T:ModMenuAPI.Interfaces.Services.IUIBuilderService">
+            <summary>
+            Used to create or retrieve existing UI elements.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IUIBuilderService.GetGroupByType(System.Type)">
+            <summary>
+            Retrieves an automatically generated group by the specified type.
+            </summary>
+            <param name="type">Type of the automatically generated group (See <see cref="T:ModMenuAPI.Interfaces.UI.IStaticGroup"/>).</param>
+            <returns>The generated group widget.</returns>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IUIBuilderService.GetMenuByType(System.Type)">
+            <summary>
+            Retrieves an automatically generated menu by the specified type.
+            </summary>
+            <param name="type">Type of the automatically generated menu (See <see cref="T:ModMenuAPI.Interfaces.UI.IStaticMenu"/>).</param>
+            <returns>The generated menu widget.</returns>
+        </member>
+        <member name="M:ModMenuAPI.Interfaces.Services.IUIBuilderService.ActivateMenu(Tubble.Interfaces.IWidget)">
+            <summary>
+            Deactivates the currently active menu and enables the specified menu instead.
+            </summary>
+            <param name="menu">Widget of the menu.</param>
+        </member>
+        <member name="T:ModMenuAPI.Interfaces.UI.IStaticGroup">
+            <summary>
+            Defines a static UI grouping, that is available at all times.
+            </summary>
+            <example>
+            [!code-csharp[](../src/examples/ExampleStaticGroup.cs)]
+            </example>
+        </member>
+        <member name="P:ModMenuAPI.Interfaces.UI.IStaticGroup.Label">
+            <summary>
+            The title text of the UI grouping.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Interfaces.UI.IStaticGroup.ParentMenu">
+            <summary>
+            The type of the menu this grouping belongs to.
+            </summary>
+            <remarks>
+            If this value is set to null, then the grouping will appear on the main menu page.
+            </remarks>
+        </member>
+        <member name="T:ModMenuAPI.Interfaces.UI.IStaticMenu">
+            <summary>
+            Used to define a new, automatically generated menu page in the ModMenu.
+            </summary>
+            <example>
+            [!code-csharp[](../src/examples/ExampleStaticMenu.cs)]
+            </example>
+        </member>
+        <member name="P:ModMenuAPI.Interfaces.UI.IStaticMenu.Label">
+            <summary>
+            Title text of the menu.
+            </summary>
+        </member>
+        <member name="P:ModMenuAPI.Interfaces.UI.IStaticMenu.ParentGroup">
+            <summary>
+            The type of the <seealso cref="T:ModMenuAPI.Interfaces.UI.IStaticGroup"/> that opens this menu.
+            <br></br>
+            A new button with the upper label will automatically be created on the specified group.
+            </summary>
+        </member>
+        <member name="T:ModMenuAPI.Service">
+            <summary>
+            Used to access individual services from anywhere in the application, working similar to the IoC pattern.
+            </summary>
+        </member>
+        <member name="M:ModMenuAPI.Service.Register``1(``0)">
+            <summary>
+            Registers an instance of a service.
+            </summary>
+            <typeparam name="TService">Interface or concrete type of the service.</typeparam>
+            <param name="serviceInstance">Existing instance of the service, that will be used throughout the application.</param>
+            <returns>Instance of the registered service.</returns>
+        </member>
+        <member name="M:ModMenuAPI.Service.Get``1">
+            <summary>
+            Retrieves the existing registered instance of the requested service.
+            </summary>
+            <typeparam name="TService">Interface or concrete type of the service.</typeparam>
+            <returns>Instance of the registered service.</returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">A service of the requested type was not registered.</exception>
+        </member>
+        <member name="M:ModMenuAPI.Service.IsRegistered``1">
+            <summary>
+            Queries the registered services, to figure out if a service of the requested type is already registered.
+            </summary>
+            <typeparam name="TService">Interface or concrete type of the service.</typeparam>
+            <returns><value>true</value>, if a service of the type <typeparamref name="TService"/> is registered, else <value>false</value></returns>
+        </member>
+    </members>
+</doc>
